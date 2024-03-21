@@ -8,17 +8,26 @@ ${renderNav()}
 
 <h1> Like / Dislike </h1>
 <button type="button" id="btn-like">
-  <img src="/thumb-up-fill.svg">
+  <i class="em em---1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>
 </button>
 `;
 
-const Btn = document.querySelector("#btn-like")
+const btn = document.querySelector('#btn-like');
 
 const handler = () => {
-    
-  };
+  
+    const rotation = btn.style.transform;
 
-  colorBtn.addEventListener("click", handler);
+    if ((!rotation ) || rotation == 'rotate(0deg)') {
+      btn.style.transform = 'rotate(180deg)';
+    }
+    else {
+      btn.style.transform = 'rotate(0deg)';
+    }
+    console.log(rotation);
+}
+
+  btn.addEventListener("click", handler);
 
 
 
