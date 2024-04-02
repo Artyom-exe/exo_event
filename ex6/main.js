@@ -1,20 +1,28 @@
-import '../style.css';
+import '/laragon/www/exo_event/style.css';
 import { renderNav } from "../components/nav.js";
 
 app.innerHTML = `
 ${renderNav()}
 
-<h1>Changement de couleur de fond avec un sélecteur de couleur</h1>
-<input type="color" id= "btn-color"> 
+<h1>Menu dropdown</h1>
+<input type="button" id= "btn-drop" value="Click me">
+<ul id="hideIt">
+  <li><a href="">link 1</a></li>
+  <li><a href="">link 2</a></li>
+  <li><a href="">link 3</a></li>
+</ul>
 `;
-const btnColor = document.querySelector('#btn-color')
+
+const element = document.querySelector('#hideIt');
+const btnDrop = document.querySelector('#btn-drop');
 
 const handler = () => {
   
-  document.body.style.background = btnColor.value;
+  element.classList.toggle("hiddenEx6");
+  
 }
 
-btnColor.addEventListener('input', handler);
+btnDrop.addEventListener('click', handler);
 
 
 
